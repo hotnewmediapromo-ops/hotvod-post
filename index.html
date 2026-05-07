@@ -1250,8 +1250,7 @@ async function submitBriefDemo(e) {
       method:  'POST',
       headers: _ahdrs,
       body:    JSON.stringify(payload),
-      credentials: 'include'
-    });
+      });
 
     if (!resp.ok) {
       const errText = await resp.text();
@@ -2019,7 +2018,6 @@ async function _callFn(name, payload = {}) {
     method: 'POST',
     headers: hdrs,
     body: JSON.stringify(payload),
-    credentials: 'include'
   });
   return { ok: res.ok, status: res.status, data: await res.json().catch(() => ({})) };
 }
@@ -2205,8 +2203,7 @@ async function doLogin() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email, password: pass }),
-      credentials: 'include'
-    });
+      });
 
     var loginJson = {};
     try { loginJson = await loginRes.json(); } catch {}
